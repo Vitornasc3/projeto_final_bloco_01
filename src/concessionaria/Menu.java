@@ -2,6 +2,10 @@ package concessionaria;
 
 import java.util.Scanner;
 
+import concessionaria.model.Carro;
+import concessionaria.model.Moto;
+import concessionaria.model.Veiculo;
+
 public class Menu {
 	
 	static Scanner leia = new Scanner(System.in);
@@ -9,7 +13,14 @@ public class Menu {
 	public static void main(String[] args) {
 		
 		String marca, modelo, cor;
-		int opcao = 0, ano, tipo, id, portas, capacetes;
+		int opcao = 0, ano, tipo, id, portas, cilindrada;
+		float valor;
+		
+		Carro v1 = new Carro(1, "VolksWagen", "Gol", "Preto", 2007, 25000.00f, 1, 2);
+		v1.visualizar();
+		
+		Moto m1 = new Moto(2, "Honda", "CB300", "Vermelha", 2015, 13000f, 2, 200);
+		m1.visualizar();
 		
 		while (true) {
 
@@ -45,8 +56,6 @@ public class Menu {
 			
 			default -> System.out.println("Opção inválida!");
 			}
-		}
-			
+		}	
 	}
-
 }
